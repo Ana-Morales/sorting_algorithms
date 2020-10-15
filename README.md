@@ -1,0 +1,1 @@
+This repo is about C - Sorting algorithms & Big O
