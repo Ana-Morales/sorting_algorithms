@@ -9,7 +9,7 @@
  */
 void counting_sort(int *array, size_t size)
 {
-	int *count = NULL, *out = NULL, max = 0;
+	int *count = NULL, *out = NULL, max = 0, total = 0;
 	size_t i, j;
 
 	if (array == NULL || size < 2)
@@ -29,7 +29,8 @@ void counting_sort(int *array, size_t size)
 		count[array[i]]++;
 	for (i = 1; i <= j; i++)
 	{
-		count[i] += count[i - 1];
+		total += count[i];
+		count[i] = total;
 	}
 	print_array(count, max + 1);
 	out = malloc(sizeof(int) * size);
