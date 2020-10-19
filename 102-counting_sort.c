@@ -9,7 +9,7 @@
  */
 void counting_sort(int *array, size_t size)
 {
-	int *count, *out, max = 0, total = 0;
+	int *count = NULL, *out = NULL, max = 0, total = 0;
 	size_t i, j;
 
 	if (array == NULL || size < 2)
@@ -47,6 +47,6 @@ void counting_sort(int *array, size_t size)
 	}
 	for (i = 0; i < size; i++)
 		array[i] = out[i];
-	free(count);
 	free(out);
+	free(count);
 }
