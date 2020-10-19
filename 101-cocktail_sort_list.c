@@ -31,24 +31,22 @@ void swap_func(listint_t **list, listint_t *node)
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *current = *list;
-	int flag = 1, flag1 = 0;
+	int flag = 1;
 
-	if (list == NULL || *list == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 	while (flag > 0)
 	{
 		flag = 0;
 		while (current->next != NULL)
 		{
-			flag1 = 0;
 			if (current->n > current->next->n)
 			{
 				swap_func(list, current);
 				print_list(*list);
 				flag = 1;
-				flag1 = 1;
 			}
-			if (flag1 == 0)
+			else
 				current = current->next;
 		}
 		if (flag == 0)
@@ -56,15 +54,13 @@ void cocktail_sort_list(listint_t **list)
 		flag = 0;
 		while (current->prev != NULL)
 		{
-			flag1 = 0;
 			if (current->n < current->prev->n)
 			{
 				swap_func(list, current->prev);
 				print_list(*list);
 				flag = 1;
-				flag1 = 1;
 			}
-			if (flag1 == 0)
+			else
 				current = current->prev;
 		}
 	}
