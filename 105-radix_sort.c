@@ -1,6 +1,5 @@
 #include "sort.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * countingSort - Performs counting sort on each exponent/digit, starting at the
  * least significant digit
