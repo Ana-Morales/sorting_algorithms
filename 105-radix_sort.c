@@ -1,8 +1,8 @@
 #include "sort.h"
 #include <stdlib.h>
 /**
- * countingSort - Performs counting sort on each exponent/digit, starting at the
- * least significant digit
+ * countingSort - Performs counting sort on each exponent/digit, starting at
+ * the least significant digit
  * @array: array to be sorted
  * @size: array's size
  * @radix: base, of the number system
