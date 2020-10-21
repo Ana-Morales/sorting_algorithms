@@ -61,23 +61,20 @@ void countingSort(int *array, int radix, int exp, size_t size)
  */
 void radix_sort(int *array, size_t size)
 {
-	int min, max, exp;
+	int max, exp;
 	size_t i = 0;
 
 	if (array == NULL || size < 2)
 		return;
-	min = array[0];
 	max = array[0];
 	while (i < size)
 	{
-		if (array[i] < min)
-			min = array[i];
-		else if (array[i] > max)
+		if (array[i] > max)
 			max = array[i];
 		i++;
 	}
 	exp = 1;
-	while ((max - min) / exp >= 1)
+	while (max / exp >= 1)
 	{
 		countingSort(array, 10, exp, size);
 		exp *= 10;
